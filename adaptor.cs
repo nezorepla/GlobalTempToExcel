@@ -50,10 +50,10 @@ namespace adaptor
         }
         static void Main(string[] args)
         {
-            baglanti = new SqlConnection("Data Source=.; Initial Catalog=master; Integrated Security=true");
+            baglanti = new SqlConnection("Data Source=XXX; Initial Catalog=dw_production; Integrated Security=true");
 
-            exec("select 'a' a, '2' b, 3 c into ##deneme");
-            DataTable dt = Getdata("select * from ##deneme");
+          //  exec("select 'a' a, '2' b, 3 c into ##deneme");
+            DataTable dt = Getdata("select  * from ##DEVIR");
 
             create(dt);
 
@@ -67,16 +67,37 @@ namespace adaptor
         }
         public static void create(DataTable dt)
         {
-            FileStream stream = new FileStream("demo2.xlsx", FileMode.OpenOrCreate);
+            FileStream stream = new FileStream("DEVIR.xls", FileMode.OpenOrCreate);
             ExcelWriter writer = new ExcelWriter(stream);
             writer.BeginWrite();
 
-            for (int i = 0; i < dt.Columns.Count; i++)
+          for (int i = 0; i < dt.Columns.Count; i++)
             {
                 string name = dt.Columns[i].ColumnName.ToString();
                 writer.WriteCell(0, i, name);
 
             }
+			
+		 /*  */
+				
+				
+				
+				 for (int r = 0; r < dt.Rows.Count; r++)
+                    {
+ //string TempStr = HeadStr;
+ //Sb.Append("{");
+  for (int c = 0; c < dt.Columns.Count; c++)
+                        {
+							      writer.WriteCell(r+1, c, dt.Rows[r][c].ToString());
+ //  TempStr = TempStr.Replace("<br>", Environment.NewLine).Replace(Dt.Columns[j] + j.ToString() + "¾", Dt.Rows[r][c].ToString());
+ }
+ //Sb.Append(TempStr + "},");
+ }
+				
+				
+				
+				
+				
             writer.EndWrite();
             stream.Close();
         }
