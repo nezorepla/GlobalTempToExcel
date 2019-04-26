@@ -292,7 +292,7 @@ public static void mail(){
 Microsoft.Office.Interop.Outlook.MailItem MailObject = (Microsoft.Office.Interop.Outlook.MailItem)(OutlookObject.CreateItem(Microsoft.Office.Interop.Outlook.OlItemType.olMailItem));
  
 //Mesajı gönderen "TO"
-MailObject.To = "aozen@burgan.com.tr";
+MailObject.To = "aozen";
 //İhtiyaca göre "CC" ve "BCC" eklenmesi
 //MailObject.CC = ccTextBox.Text;
 //MailObject.BCC = bccTextBox.Text;
@@ -328,7 +328,7 @@ MailObject.Send();
         var mailItem = (Outlook.MailItem)oApp.CreateItem(Outlook.OlItemType.olMailItem);
         mailItem.Subject = "Error Report from user: " + AuthenticationManager.LoggedInUserName;
         mailItem.HTMLBody = "Test email\n"+ReadSignature();
-        mailItem.To =  "aozen@burgan.com.tr";
+        mailItem.To =  "aozen";
        // mailItem.Display(true);	
 		mailItem.Send();
 		*/
