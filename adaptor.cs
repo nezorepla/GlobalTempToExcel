@@ -109,7 +109,7 @@ if(q.IndexOf("DROP ")>0)
 
  static void Main(string[] args)
         {
-            baglanti = new SqlConnection("Data Source=10.180.20.31; Initial Catalog=dw_production; Integrated Security=true");
+            baglanti = new SqlConnection("Data Source=xxx; Initial Catalog=xxx; Integrated Security=true");
 
 //	  string filepath = "d://ConvertedFile.csv";
 //      DataTable res = ConvertCSVtoDataTable(filepath);
@@ -128,7 +128,7 @@ islem("PK_PERFORMANS");
 islem("PK_PCSM");
 islem("PK_DASHBOARD");
 
-Process.Start(@"C:\Users\U05180\Desktop\kapakingen\DATAMART_MAIL.vbs");
+Process.Start(@"C:\Users\"\Desktop\kapakingen\DATAMART_MAIL.vbs");
 	
 System.Threading.Thread.Sleep(-1);
 Console.ReadLine();
