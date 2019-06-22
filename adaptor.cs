@@ -155,7 +155,7 @@ Console.WriteLine(isim+" Basladi-->"+DateTime.Now.ToString());
 try{
 
 
-string s_p=@"C:\Users\U05180\Desktop\sql\jobs\"+isim+".sql";
+string s_p=@"C:\Users\\Desktop\sql\jobs\"+isim+".sql";
 
 string text;
 var fileStream = new FileStream(s_p, FileMode.Open, FileAccess.Read);
@@ -242,7 +242,7 @@ File.WriteAllText("YAPILANDIRMALAR.csv", sb.ToString());
 public static void DataTableToCSV(DataTable dataTable, string filePath){
 
 
-string pth=@"\\hegel\Perakende Krediler2\Kredi Politikaları ve Karar Destek\8_SPSS\99_Dashboard\01_Output\";
+string pth=@"\\hegel\\";
  string yol= pth+filePath;
 	try
 {
